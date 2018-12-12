@@ -1,0 +1,47 @@
+.Navbar {
+  background: #5ae;
+  padding: 1.4em 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: .35em solid #f66;
+}
+
+.Navbar > #logo > a {
+  color: white;
+  font-size: 1.25em;
+  font-weight: 600;
+  text-decoration: none;
+  padding: .25em;
+  padding-right: .65em;
+  padding-top: 0;
+  border-right: .15em solid white;
+  border-bottom: .15em solid white;
+  border-bottom-right-radius: 1.4em;
+}
+
+.Navbar > #links {
+  display: flex;
+  align-items: space-between;
+}
+
+.Navbar > #links > a {
+  color: white;
+  text-decoration: none;
+  margin: 0 .75em;
+  padding-bottom: .15em;
+  transition: .15s ease;
+  border-bottom: .18em solid transparent;
+}
+
+.Navbar > #links > a:hover {
+  border-bottom: .18em solid #fe4;
+}
+
+.Navbar > #links > a:first-of-type {
+  margin-left: 0;
+}
+
+.Navbar > #links > a:last-of-type {
+  margin-right: 0;
+}

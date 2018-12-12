@@ -1,0 +1,19 @@
+{
+  "name": "e-drone-social",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zcoursey22/e-drone-social.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zcoursey22/e-drone-social/issues"
+  },
+  "homepage": "https://github.com/zcoursey22/e-drone-social#readme"
+}
