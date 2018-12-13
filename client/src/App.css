@@ -1,10 +1,117 @@
+.Login {
+  background: radial-gradient(#6bf, #5ae);
+  height: 100vh;
+  padding-top: 7em;
+}
+
+.Login > #logo {
+  text-align: center;
+  margin-bottom: 4.5em;
+}
+
+.Login > #logo > span {
+  color: white;
+  font-size: 2.5em;
+  font-weight: 600;
+  text-decoration: none;
+  padding: .25em;
+  padding-right: .65em;
+  padding-top: 0;
+  border-right: .15em solid white;
+  border-bottom: .15em solid white;
+  border-bottom-right-radius: 1.4em;
+}
+
+.Login > #modal {
+  background: white;
+  border: .15em solid #ccc;
+  width: 30em;
+  margin: 0 auto;
+  padding: 2em 1em;
+  padding-top: 2.5em;
+  box-shadow: 0 .2em .3em .15em rgba(0,0,0,0.25);
+  border-radius: .2em;
+}
+
+.Login > #modal > #title {
+  text-align: center;
+  font-weight: normal;
+}
+
+.Login > #modal > #main-login {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  margin: 1.5em 0;
+  margin-bottom: 3em;
+}
+
+.Login > #modal > #main-login > input {
+  font-size: 1em;
+  padding: .5em;
+  border: .05em solid #ccc;
+  margin: .5em 0;
+  border-radius: .1em;
+}
+
+.Login > #modal > #main-login > #forgot-password {
+  color: #f66;
+  font-size: .9em;
+  font-weight: 500;
+  transition: .1s ease;
+  text-align: right;
+  padding: .15em;
+  margin-bottom: 2em;
+  align-self: flex-end;
+}
+
+.Login > #modal > #main-login > #forgot-password:hover {
+  color: #f55;
+  cursor: pointer;
+}
+
+.Login > #modal > #main-login > button {
+  background: linear-gradient(#f66, #f55);
+  color: white;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: .5em;
+  border: .05em solid #a00;
+  border-radius: .1em;
+  /* background: linear-gradient(to top, #5ae, #6bf);
+  border: .05em solid #38c; */
+}
+
+.Login > #modal > #sign-up {
+  text-align: center;
+}
+
+.Login > #modal > #sign-up > #sign-up-text {
+  color: #f66;
+  font-weight: 600;
+  transition: .1s ease;
+  margin-left: .3em;
+  padding: .2em;
+}
+
+.Login > #modal > #sign-up > #sign-up-text:hover {
+  color: #f55;
+  cursor: pointer;
+}
+
+
+
 .Navbar {
-  background: #5ae;
+  background: linear-gradient(to left, #6bf, #5ae);
   padding: 1.4em 3em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: .35em solid #f66;
+}
+
+.Navbar > #logo {
+  margin-bottom: .25em;
 }
 
 .Navbar > #logo > a {
@@ -23,6 +130,7 @@
 .Navbar > #links {
   display: flex;
   align-items: space-between;
+  margin-top: .4em;
 }
 
 .Navbar > #links > a {
