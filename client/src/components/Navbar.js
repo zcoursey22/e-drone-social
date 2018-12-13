@@ -3,8 +3,9 @@ import { withRouter, NavLink } from 'react-router-dom';
 
 const Navbar = withRouter((props) => {
   const signOut = () => {
-    props.fakeAuth.signOut();
-    props.history.push('/');
+    props.fakeAuth.signOut(() => {
+      props.history.push('/');
+    });
   };
 
   let links = null;
