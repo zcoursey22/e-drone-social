@@ -9,7 +9,7 @@
   margin-bottom: 4.5em;
 }
 
-.Login > #logo > span {
+.Login > #logo > a {
   color: white;
   font-size: 2.5em;
   font-weight: 600;
@@ -25,7 +25,7 @@
 .Login > #modal {
   background: white;
   border: .15em solid #ccc;
-  width: 30em;
+  width: 22em;
   margin: 0 auto;
   padding: 2em 1em;
   padding-top: 2.5em;
@@ -66,20 +66,30 @@
 }
 
 .Login > #modal > #main-login > #forgot-password:hover {
-  color: #f55;
+  color: #e55;
   cursor: pointer;
 }
 
 .Login > #modal > #main-login > button {
-  background: linear-gradient(#f66, #f55);
+  background: linear-gradient(#f66, #e55);
   color: white;
   font-size: 1.1em;
   font-weight: 500;
   padding: .5em;
   border: .05em solid #a00;
   border-radius: .1em;
+  cursor: pointer;
+  transition: .1s ease;
   /* background: linear-gradient(to top, #5ae, #6bf);
   border: .05em solid #38c; */
+}
+
+.Login > #modal > #main-login > button:hover {
+  background: linear-gradient(#e55, #d44);
+}
+
+.Login > #modal > #main-login > button:focus {
+  background: linear-gradient(#e55, #d44);
 }
 
 .Login > #modal > #sign-up {
@@ -95,7 +105,7 @@
 }
 
 .Login > #modal > #sign-up > #sign-up-text:hover {
-  color: #f55;
+  color: #e55;
   cursor: pointer;
 }
 
@@ -133,16 +143,22 @@
   margin-top: .4em;
 }
 
-.Navbar > #links > a {
+.Navbar > #links > a,button {
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 1em;
   color: white;
   text-decoration: none;
   margin: 0 .75em;
+  padding-top: 0;
   padding-bottom: .15em;
   transition: .15s ease;
   border-bottom: .18em solid transparent;
+  cursor: pointer;
 }
 
-.Navbar > #links > a:hover {
+.Navbar > #links > a:hover,button:hover {
   border-bottom: .18em solid #fe4;
 }
 
@@ -150,6 +166,6 @@
   margin-left: 0;
 }
 
-.Navbar > #links > a:last-of-type {
+.Navbar > #links > button {
   margin-right: 0;
 }

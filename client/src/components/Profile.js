@@ -2,13 +2,13 @@ import React from 'react';
 
 import Navbar from './Navbar.js';
 
-const Main = (props) => {
+const Profile = (props) => {
   return (
     <div className="Main">
       <Navbar fakeAuth={ props.fakeAuth }></Navbar>
-      <h1>Main</h1>
+      <h1>Profile</h1>
     </div>
   );
 };
 
-export default Main;
+export default Profile;

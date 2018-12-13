@@ -1,20 +1,37 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = withRouter((props) => {
+  const signOut = () => {
+    props.fakeAuth.signOut();
+    props.history.push('/');
+  };
+
+  let links = null;
+  if (props.fakeAuth.isAuthenticated) {
+    links = (
+      <div id="links">
+        <NavLink className="link" to="/profile">Profile</NavLink>
+        <button className="link" onClick={signOut}>Log Out</button>
+      </div>
+    );
+  } else {
+    links = (
+      <div id="links">
+        {/* <NavLink className="link" to="/profile">Profile</NavLink> */}
+        <NavLink className="link" to="/login">Log In</NavLink>
+      </div>
+    );
+  }
+
   return (
     <div className="Navbar">
       <div id="logo">
-        <a href="#">flyConnect</a>
+        <NavLink to="/">flyConnect</NavLink>
       </div>
-      <div id="links">
-        <a className="link" href="#">Profile</a>
-        <a className="link" href="#">Friends</a>
-        <a className="link" href="#">Messages</a>
-        <a className="link" href="#">Log Out</a>
-      </div>
+      { links }
     </div>
   );
-};
+});
 
 export default Navbar;
