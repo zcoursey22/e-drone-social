@@ -18,14 +18,20 @@ class Login extends Component {
     const {username, password} = this.state;
     axios.post('/api/login', {username , password})
       .then(res => {
-        if (res.data) {
+        if (typeof res.data.token !== 'undefined') {
+
+
+          // store token in localStorage
+
+
+          console.log(`Your token is ${res.data.token}`);
           this.props.fakeAuth.authenticate(() => {
             this.setState({
               redirectToReferrer: true
             });
           });
         } else {
-          alert('Invalid login credentials!');
+          console.log('Invalid login credentials!');
         }
       })
       .catch(err => err);

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/zcoursey22/e-drone-social#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
     "nodemon": "^1.18.8"
   }
 }
