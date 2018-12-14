@@ -166,6 +166,10 @@
   margin-left: 0;
 }
 
+.Navbar > #links > a:last-of-type {
+  margin-right: 0;
+}
+
 .Navbar > #links > button {
   margin-right: 0;
   padding-left: 0;
