@@ -7,22 +7,24 @@ import Main from './components/Main.js';
 import Login from './components/Login.js';
 import Profile from './components/Profile.js';
 
-const fakeAuth = {
-  isAuthenticated: false,
+
+const auth = {
+  isAuthenticated: localStorage.token !== undefined,
   authenticate(cb) {
     this.isAuthenticated = true;
-    setTimeout(cb, 100);
+    setTimeout(cb, 0);
   },
   signOut(cb) {
     this.isAuthenticated = false;
-    setTimeout(cb, 100);
+    localStorage.clear();
+    setTimeout(cb, 0);
   }
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
-    fakeAuth.isAuthenticated === true
-      ? <Component {...props} fakeAuth={fakeAuth} />
+    auth.isAuthenticated === true
+      ? <Component {...props} auth={auth} />
       : <Redirect to={{
           pathname: '/login',
           state: { from: props.location }
@@ -41,8 +43,8 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" render={(props) => <Main {...props} fakeAuth={fakeAuth} /> } />
-          <Route path="/login" render={(props) => <Login {...props} fakeAuth={fakeAuth} /> } />
+          <Route exact path="/" render={(props) => <Main {...props} auth={auth} /> } />
+          <Route path="/login" render={(props) => <Login {...props} auth={auth} /> } />
           <PrivateRoute path="/profile" component={Profile} />
         </Switch>
       </div>

@@ -5,7 +5,7 @@ import Navbar from './Navbar.js';
 const Main = (props) => {
   return (
     <div className="Main">
-      <Navbar fakeAuth={ props.fakeAuth }></Navbar>
+      <Navbar auth={ props.auth }></Navbar>
       <h1>Main</h1>
     </div>
   );

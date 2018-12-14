@@ -3,13 +3,13 @@ import { withRouter, NavLink } from 'react-router-dom';
 
 const Navbar = withRouter((props) => {
   const signOut = () => {
-    props.fakeAuth.signOut(() => {
+    props.auth.signOut(() => {
       props.history.push('/');
     });
   };
 
   let links = null;
-  if (props.fakeAuth.isAuthenticated) {
+  if (props.auth.isAuthenticated) {
     links = (
       <div id="links">
         <NavLink className="link" to="/profile">Profile</NavLink>

@@ -20,18 +20,19 @@ class Login extends Component {
       .then(res => {
         if (typeof res.data.token !== 'undefined') {
 
+          localStorage.setItem('user', JSON.stringify(res.data.user));
+          localStorage.setItem('token', res.data.token);
 
-          // store token in localStorage
+          console.log('localStorage user:', JSON.parse(localStorage.getItem('user')));
+          console.log('localStorage token:', localStorage.getItem('token'));
 
-
-          console.log(`Your token is ${res.data.token}`);
-          this.props.fakeAuth.authenticate(() => {
+          this.props.auth.authenticate(() => {
             this.setState({
               redirectToReferrer: true
             });
           });
         } else {
-          console.log('Invalid login credentials!');
+          alert('Invalid login credentials!');
         }
       })
       .catch(err => err);

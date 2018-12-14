@@ -26,26 +26,23 @@ app.get('/api', (req, res) => {
 // });
 
 app.post('/api/login', (req, res) => {
-  const {id, username, email, password} = req.body;
+  const {username, password} = req.body;
   let matched = false;
   for (let i = 0; i < sampleData.users.length; i++) {
     if ((sampleData.users[i].username === username || sampleData.users[i].email === username) && sampleData.users[i].password === password) {
       matched = true;
       const user = {
-        id,
-        username,
-        email
+        id: sampleData.users[i].id,
+        username: sampleData.users[i].username,
+        email: sampleData.users[i].email
       };
-      jwt.sign({user}, 'secret key', { expiresIn: '30s' }, (err, token) => {
+      jwt.sign({user}, 'secret key', (err, token) => {
         console.log(token);
-        res.json({token});
+        res.json({user, token});
       });
-    } else {
-      console.log(i);
     }
   }
   if (matched === false) {
-    console.log('invalid');
     res.send();
   }
 });
