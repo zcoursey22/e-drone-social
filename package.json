@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/zcoursey22/e-drone-social/issues"
   },
-  "homepage": "https://github.com/zcoursey22/e-drone-social#readme"
+  "homepage": "https://github.com/zcoursey22/e-drone-social#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.8"
+  }
 }

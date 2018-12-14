@@ -1,6 +1,7 @@
-const users = {
+const users = [
   {
     id: 0,
+    email: 'user0@email.com',
     username: 'user0',
     password: 'pass0',
     location: {
@@ -14,6 +15,7 @@ const users = {
   },
   {
     id: 1,
+    email: 'user1@email.com',
     username: 'user1',
     password: 'pass1',
     location: {
@@ -27,6 +29,7 @@ const users = {
   },
   {
     id: 2,
+    email: 'user2@email.com',
     username: 'user2',
     password: 'pass2',
     location: {
@@ -38,4 +41,6 @@ const users = {
       lat: 65
     }
   }
-}
+]
+
+module.exports.users = users;

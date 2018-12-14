@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import axios from 'axios';
 
 class Login extends Component {
   constructor(props) {
@@ -15,11 +15,20 @@ class Login extends Component {
   }
 
   logIn() {
-    this.props.fakeAuth.authenticate(() => {
-      this.setState({
-        redirectToReferrer: true
-      });
-    });
+    const {username, password} = this.state;
+    axios.post('/api/login', {username , password})
+      .then(res => {
+        if (res.data) {
+          this.props.fakeAuth.authenticate(() => {
+            this.setState({
+              redirectToReferrer: true
+            });
+          });
+        } else {
+          alert('Invalid login credentials!');
+        }
+      })
+      .catch(err => err);
   }
 
   render() {
@@ -29,14 +38,6 @@ class Login extends Component {
         <Redirect to={ from }/>
       )
     }
-
-    const Username = styled.input`
-
-    `;
-
-    const Password = styled.input`
-
-    `;
 
     return (
       <div className="Login">
@@ -48,8 +49,8 @@ class Login extends Component {
           <h2 id="title">Log In to Your Account</h2>
 
           <div id="main-login">
-            <Username placeholder="email or username"></Username>
-            <Password placeholder="password"></Password>
+            <input onChange={e => this.setState({ username: e.target.value })} placeholder="email or username"></input>
+            <input onChange={ (e) => this.setState({ password: e.target.value }) } placeholder="password"></input>
             <span id="forgot-password">Forgot password?</span>
             <button onClick={ this.logIn.bind(this) }>Log In</button>
           </div>

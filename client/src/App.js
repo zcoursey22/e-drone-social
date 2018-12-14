@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 
 import Main from './components/Main.js';
@@ -30,6 +31,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 );
 
 class App extends Component {
+  componentDidMount() {
+    axios.get('/api')
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <div className="App">
