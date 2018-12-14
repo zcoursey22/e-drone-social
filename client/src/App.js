@@ -8,13 +8,22 @@ import Login from './components/Login.js';
 import Profile from './components/Profile.js';
 
 
+const defaultUser = {
+  id: '',
+  username: '',
+  email: '',
+}
+
 const auth = {
+  user: localStorage.user !== undefined ? JSON.parse(localStorage.user) : defaultUser,
   isAuthenticated: localStorage.token !== undefined,
   authenticate(cb) {
+    this.user = JSON.parse(localStorage.user);
     this.isAuthenticated = true;
     setTimeout(cb, 0);
   },
   signOut(cb) {
+    this.user = undefined;
     this.isAuthenticated = false;
     localStorage.clear();
     setTimeout(cb, 0);
